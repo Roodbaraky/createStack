@@ -46,6 +46,10 @@ public class Stack {
         return !storage.isEmpty();
     }
 
+    public Object peek(){
+        return storage.getLast();
+    }
+
     @Override
     public String toString() {
         return storage.toString();
