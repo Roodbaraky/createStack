@@ -30,14 +30,19 @@ public class Stack {
     }
 
     public void push(Object item) {
-        storage.add(item);
+        if (!this.isFull()) {
+            storage.add(item);
+        }
         quantity = storage.size();
     }
 
     public Object pop() {
-        Object temp = storage.getLast();
-        storage.remove(storage.removeLast());
-        return temp;
+        if(!this.isEmpty()) {
+            Object temp = storage.getLast();
+            storage.remove(storage.removeLast());
+            return temp;
+        }
+        return storage;
     }
 
     public boolean isEmpty() {
@@ -45,7 +50,7 @@ public class Stack {
     }
 
     public boolean isFull() {
-        return !storage.isEmpty();
+        return quantity == limit;
     }
 
     public Object peek() {
