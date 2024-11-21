@@ -11,11 +11,12 @@ public class Stack {
         return quantity;
     }
 
-    private Stack(){
+    private Stack() {
         this.storage = new ArrayList<>();
         this.quantity = 0;
     }
-    private Stack(int limit){
+
+    private Stack(int limit) {
         this();
         this.limit = limit;
     }
@@ -28,25 +29,26 @@ public class Stack {
         return new Stack(limit);
     }
 
-    public void push(Object item){
+    public void push(Object item) {
         storage.add(item);
-        quantity=storage.size();
+        quantity = storage.size();
     }
 
-    public Object pop(){
+    public Object pop() {
         Object temp = storage.getLast();
         storage.remove(storage.removeLast());
         return temp;
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return storage.isEmpty();
     }
-    public boolean isFull(){
+
+    public boolean isFull() {
         return !storage.isEmpty();
     }
 
-    public Object peek(){
+    public Object peek() {
         return storage.getLast();
     }
 
