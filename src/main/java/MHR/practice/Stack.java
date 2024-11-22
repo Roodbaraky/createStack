@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Stack {
     private ArrayList<Object> storage;
     private int quantity;
-    private int limit;
+    private int limit = Integer.MAX_VALUE;
 
     public int getQuantity() {
         return quantity;
@@ -50,7 +50,7 @@ public class Stack {
     }
 
     public boolean isFull() {
-        return quantity == limit;
+        return storage.size() == limit;
     }
 
     public Object peek() {
