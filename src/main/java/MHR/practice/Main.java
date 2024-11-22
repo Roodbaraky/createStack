@@ -2,7 +2,6 @@ package MHR.practice;
 
 import static MHR.practice.Stack.createStack;
 
-import java.awt.*;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -61,7 +60,7 @@ public class Main {
                     System.out.println("Please enter a size for the stack:");
                     try {
                         stackSize = scanner.nextInt();
-                        if(stackSize<1){
+                        if (stackSize < 1) {
                             System.out.println("Invalid choice. Please try again.");
                             scanner.next();
                         }
@@ -72,7 +71,7 @@ public class Main {
                     }
                 }
                 stack = createStack(stackSize);
-                while (true){
+                while (true) {
                     System.out.println("Your stack has been created: " + stack.toString());
                     break;
                 }
