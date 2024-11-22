@@ -1,12 +1,22 @@
 package MHR.practice;
 
-import java.util.ArrayList;
+import java.util.AbstractList;
 
 public interface Collection {
-        ArrayList<Object> storage = new ArrayList<>();
+        AbstractList<Object> storage = new AbstractList<>() {
+            @Override
+            public Object get(final int index) {
+                return null;
+            }
+
+            @Override
+            public int size() {
+                return 0;
+            }
+        };
         void add(Object item);
-        void remove();
-        Object peek();
         boolean isEmpty();
         int size();
+
+    void remove();
 }

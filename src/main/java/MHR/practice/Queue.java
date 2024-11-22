@@ -24,12 +24,7 @@ public class Queue implements Collection {
         enQueue(item);
     }
 
-    @Override
-    public void remove() {
-        deQueue();
-    }
 
-    @Override
     public Object peek() {
         if (!isEmpty()) {
             return storage.getFirst();
@@ -45,6 +40,11 @@ public class Queue implements Collection {
     @Override
     public int size() {
         return storage.size();
+    }
+
+    @Override
+    public void remove() {
+
     }
 
     public void enQueue(Object item) {

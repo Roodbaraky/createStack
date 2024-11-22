@@ -69,4 +69,13 @@ class StackTest {
         testStack.push("cat");
         assert (testStack.getQuantity() == 1);
     }
+
+    @Test
+    void testMultipleStacks(){
+        Stack testStack = createStack();
+        Stack testStack2 = createStack();
+        testStack.push("cat");
+        assertTrue(testStack2.isEmpty());
+
+    }
 }
