@@ -2,8 +2,8 @@ package MHR.practice;
 
 import java.util.ArrayList;
 
-public class Stack {
-    private ArrayList<Object> storage;
+public class Stack implements Collection {
+    private final ArrayList<Object> storage;
     private int quantity;
     private int limit = Integer.MAX_VALUE;
 
@@ -13,7 +13,6 @@ public class Stack {
 
     private Stack() {
         this.storage = new ArrayList<>();
-        this.quantity = 0;
     }
 
     private Stack(int limit) {
@@ -37,10 +36,12 @@ public class Stack {
     }
 
     public Object pop() {
-        if(!this.isEmpty()) {
+        if (!this.isEmpty()) {
             Object temp = storage.getLast();
             storage.remove(storage.removeLast());
+            quantity = storage.size();
             return temp;
+
         }
         return storage;
     }
@@ -49,8 +50,23 @@ public class Stack {
         return storage.isEmpty();
     }
 
+    @Override
+    public int size() {
+        return quantity;
+    }
+
     public boolean isFull() {
         return storage.size() == limit;
+    }
+
+    @Override
+    public void add(final Object item) {
+        push(item);
+    }
+
+    @Override
+    public void remove() {
+         pop();
     }
 
     public Object peek() {
